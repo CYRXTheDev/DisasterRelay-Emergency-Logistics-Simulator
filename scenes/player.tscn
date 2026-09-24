@@ -1,8 +1,29 @@
 [gd_scene format=3 uid="uid://bjn0uns604f0a"]
 
 [ext_resource type="Script" uid="uid://dgrnpnrr2b2at" path="res://scripts/player.gd" id="1_g2els"]
+[ext_resource type="Texture2D" uid="uid://qs5xwwvdcn7k" path="res://assets/sprites/vehicles/Boat.png" id="2_g2els"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g2els"]
+atlas = ExtResource("2_g2els")
+region = Rect2(768, 768, 384, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qhqgy"]
+atlas = ExtResource("2_g2els")
+region = Rect2(1152, 768, 384, 256)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_8ubid"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g2els")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qhqgy")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3ukxb"]
 radius = 10.198039
@@ -15,6 +36,8 @@ script = ExtResource("1_g2els")
 position = Vector2(3, 6)
 scale = Vector2(1, 0.9375)
 sprite_frames = SubResource("SpriteFrames_8ubid")
+autoplay = "default"
+frame_progress = 0.43822688
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=539344369]
 position = Vector2(-2, 14)
